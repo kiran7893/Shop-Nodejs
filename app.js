@@ -11,7 +11,8 @@ const flash = require("connect-flash");
 const errorController = require("./controllers/error");
 const User = require("./models/user");
 
-const uri = process.env.USER;
+const uri =
+  "mongodb+srv://User1:S1234@cluster0.s1mnznz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 const app = express();
 const store = new MongoDBStore({
@@ -78,7 +79,7 @@ mongoose
     console.log("Connected to MongoDB Atlas");
 
     // Start the server
-    app.listen(process.env.PORT || 3000, () => {
+    app.listen(3000, () => {
       console.log("Server is running on port 3000");
     });
   })
